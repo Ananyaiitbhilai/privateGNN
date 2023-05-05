@@ -174,6 +174,6 @@ final_list = simplify_ratios(all_lists)
 
 if __name__ == '__main__':
     
-    for i in range(len(final_list)):
-        main(final_list[i])
+    for i in range(1):
+        main([1,1,2])
         

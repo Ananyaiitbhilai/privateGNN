@@ -1,0 +1,1602 @@
+[02:32:05] INFO     importing modules...done in 3.72 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   1                                                                                
+                      dataset:         facebook    epochs:           1                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+           INFO                           dataset: facebook                                                                               loader.py:76
+                     ───────────────────────────────────────────────────────────                                                                      
+                      nodes:     26,406     mean degree:         80.21                                                                                
+                      edges:     2,117,924  median degree:       62.0                                                                                 
+                      features:  501        train/val/test (%):  75.0/10.0/15.0                                                                       
+                      classes:   6          baseline acc (%):    22.93                                                                                
+                     ───────────────────────────────────────────────────────────                                                                      
+
+           INFO     loading dataset...done in 0.46 s                                                                                       train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:32:07] INFO     noise scale: 0.9083                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.49 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+1
+1 train metrics: {'encoder/train/acc': 37.912960052490234, 'encoder/train/loss': 1.4601032733917236}
+1 val metrics: {'encoder/val/acc': 46.969696044921875, 'encoder/val/loss': 1.2815730571746826}
+                       overal progress   1/1 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00                                             
+                       encoder/train/acc: 37.913 encoder/train/loss: 1.460  encoder/val/acc: 46.970 encoder/val/loss: 1.282                           
+                                                                                                                                                      
+[02:32:09] INFO     bounding the number of neighbors per node...done in 1.41 s                                                          gap_ndp.py:100
+           INFO     computing aggregations...done in 0.04 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x17fc2cbb0>
+1
+1 train metrics: {'train/acc': 48.982120513916016, 'train/loss': 1.3082548379898071}
+1 val metrics: {'val/acc': 57.80302810668945, 'val/loss': 1.051038384437561}
+                       overal progress   1/1 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00                                             
+                       train/acc: 48.982 train/loss: 1.308  val/acc: 57.803 val/loss: 1.051                                                           
+                                                                                                                                                      
+           INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   58.65   58.65                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 58.65 mean 58.65
+           INFO     Total running time: 4.49 seconds.                                                                                     train.py:121
+[02:32:13] INFO     importing modules...done in 2.72 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   2                                                                                
+                      dataset:         facebook    epochs:           2                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+           INFO                           dataset: facebook                                                                               loader.py:76
+                     ───────────────────────────────────────────────────────────                                                                      
+                      nodes:     26,406     mean degree:         80.21                                                                                
+                      edges:     2,117,924  median degree:       62.0                                                                                 
+                      features:  501        train/val/test (%):  75.0/10.0/15.0                                                                       
+                      classes:   6          baseline acc (%):    22.93                                                                                
+                     ───────────────────────────────────────────────────────────                                                                      
+
+           INFO     loading dataset...done in 0.38 s                                                                                       train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:32:15] INFO     noise scale: 0.9146                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.55 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+2
+1 train metrics: {'encoder/train/acc': 37.88438034057617, 'encoder/train/loss': 1.4606980085372925}
+1 val metrics: {'encoder/val/acc': 46.85606002807617, 'encoder/val/loss': 1.2812528610229492}
+2 train metrics: {'encoder/train/acc': 46.4523811340332, 'encoder/train/loss': 1.3334264755249023}
+2 val metrics: {'encoder/val/acc': 48.2575798034668, 'encoder/val/loss': 1.357291579246521}
+                       overal progress   2/2 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00                                             
+                       encoder/train/acc: 46.452 encoder/train/loss: 1.333  encoder/val/acc: 48.258 encoder/val/loss: 1.357                           
+                                                                                                                                                      
+[02:32:17] INFO     bounding the number of neighbors per node...done in 1.42 s                                                          gap_ndp.py:100
+           INFO     computing aggregations...done in 0.03 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x10be540a0>
+2
+1 train metrics: {'train/acc': 46.50841522216797, 'train/loss': 1.2962528467178345}
+1 val metrics: {'val/acc': 54.84849166870117, 'val/loss': 1.047447919845581}
+2 train metrics: {'train/acc': 58.69828796386719, 'train/loss': 1.00681734085083}
+2 val metrics: {'val/acc': 59.28030014038086, 'val/loss': 0.9730854630470276}
+                       overal progress   2/2 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00                                             
+                       train/acc: 58.698 train/loss: 1.007  val/acc: 59.280 val/loss: 0.973                                                           
+                                                                                                                                                      
+[02:32:18] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   59.68   59.68                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 59.68 mean 59.68
+           INFO     Total running time: 4.99 seconds.                                                                                     train.py:121
+[02:32:21] INFO     importing modules...done in 2.38 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   3                                                                                
+                      dataset:         facebook    epochs:           3                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+           INFO                           dataset: facebook                                                                               loader.py:76
+                     ───────────────────────────────────────────────────────────                                                                      
+                      nodes:     26,406     mean degree:         80.21                                                                                
+                      edges:     2,117,924  median degree:       62.0                                                                                 
+                      features:  501        train/val/test (%):  75.0/10.0/15.0                                                                       
+                      classes:   6          baseline acc (%):    22.93                                                                                
+                     ───────────────────────────────────────────────────────────                                                                      
+
+           INFO     loading dataset...done in 0.37 s                                                                                       train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:32:23] INFO     noise scale: 0.9208                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.58 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+3
+1 train metrics: {'encoder/train/acc': 37.84414291381836, 'encoder/train/loss': 1.4613380432128906}
+1 val metrics: {'encoder/val/acc': 46.818180084228516, 'encoder/val/loss': 1.2811615467071533}
+2 train metrics: {'encoder/train/acc': 46.428043365478516, 'encoder/train/loss': 1.3332864046096802}
+2 val metrics: {'encoder/val/acc': 48.18181228637695, 'encoder/val/loss': 1.3572264909744263}
+3 train metrics: {'encoder/train/acc': 48.00668716430664, 'encoder/train/loss': 1.351793646812439}
+3 val metrics: {'encoder/val/acc': 48.56060791015625, 'encoder/val/loss': 1.3191182613372803}
+                       overal progress   3/3 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01                                             
+                       encoder/train/acc: 48.007 encoder/train/loss: 1.352  encoder/val/acc: 48.561 encoder/val/loss: 1.319                           
+                                                                                                                                                      
+[02:32:25] INFO     bounding the number of neighbors per node...done in 1.38 s                                                          gap_ndp.py:100
+           INFO     computing aggregations...done in 0.03 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x183bb78b0>
+3
+1 train metrics: {'train/acc': 47.7803955078125, 'train/loss': 1.3037716150283813}
+1 val metrics: {'val/acc': 54.73484802246094, 'val/loss': 1.0493171215057373}
+2 train metrics: {'train/acc': 57.9226188659668, 'train/loss': 1.0079386234283447}
+2 val metrics: {'val/acc': 60.340911865234375, 'val/loss': 0.9848234057426453}
+3 train metrics: {'train/acc': 59.81723403930664, 'train/loss': 0.9938777685165405}
+3 val metrics: {'val/acc': 60.60606384277344, 'val/loss': 0.9682090282440186}
+                       overal progress   3/3 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00                                             
+                       train/acc: 59.817 train/loss: 0.994  val/acc: 60.606 val/loss: 0.968                                                           
+                                                                                                                                                      
+[02:32:26] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   59.88   59.88                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 59.88 mean 59.88
+           INFO     Total running time: 5.66 seconds.                                                                                     train.py:121
+[02:32:29] INFO     importing modules...done in 2.38 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   4                                                                                
+                      dataset:         facebook    epochs:           4                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+[02:32:30] INFO                           dataset: facebook                                                                               loader.py:76
+                     ───────────────────────────────────────────────────────────                                                                      
+                      nodes:     26,406     mean degree:         80.21                                                                                
+                      edges:     2,117,924  median degree:       62.0                                                                                 
+                      features:  501        train/val/test (%):  75.0/10.0/15.0                                                                       
+                      classes:   6          baseline acc (%):    22.93                                                                                
+                     ───────────────────────────────────────────────────────────                                                                      
+
+           INFO     loading dataset...done in 0.35 s                                                                                       train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:32:31] INFO     noise scale: 0.9268                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.48 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+4
+1 train metrics: {'encoder/train/acc': 37.81036376953125, 'encoder/train/loss': 1.4619066715240479}
+1 val metrics: {'encoder/val/acc': 46.818180084228516, 'encoder/val/loss': 1.2809057235717773}
+2 train metrics: {'encoder/train/acc': 46.43299102783203, 'encoder/train/loss': 1.3327257633209229}
+2 val metrics: {'encoder/val/acc': 48.219696044921875, 'encoder/val/loss': 1.356899619102478}
+3 train metrics: {'encoder/train/acc': 47.989994049072266, 'encoder/train/loss': 1.35191810131073}
+3 val metrics: {'encoder/val/acc': 48.6363639831543, 'encoder/val/loss': 1.3189715147018433}
+4 train metrics: {'encoder/train/acc': 48.70085906982422, 'encoder/train/loss': 1.3239421844482422}
+4 val metrics: {'encoder/val/acc': 50.15151596069336, 'encoder/val/loss': 1.2968478202819824}
+                       overal progress   4/4 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01                                             
+                       encoder/train/acc: 48.701 encoder/train/loss: 1.324  encoder/val/acc: 50.152 encoder/val/loss: 1.297                           
+                                                                                                                                                      
+[02:32:34] INFO     bounding the number of neighbors per node...done in 1.42 s                                                          gap_ndp.py:100
+           INFO     computing aggregations...done in 0.03 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x10e71e5e0>
+4
+1 train metrics: {'train/acc': 48.957218170166016, 'train/loss': 1.3195492029190063}
+1 val metrics: {'val/acc': 58.14393615722656, 'val/loss': 1.038491129875183}
+2 train metrics: {'train/acc': 61.036251068115234, 'train/loss': 0.9965489506721497}
+2 val metrics: {'val/acc': 61.7424201965332, 'val/loss': 0.9689810276031494}
+3 train metrics: {'train/acc': 61.88206100463867, 'train/loss': 0.9476861953735352}
+3 val metrics: {'val/acc': 63.67424011230469, 'val/loss': 0.9519588351249695}
+4 train metrics: {'train/acc': 61.98178482055664, 'train/loss': 0.9499492645263672}
+4 val metrics: {'val/acc': 62.121212005615234, 'val/loss': 0.9686750769615173}
+                       overal progress   4/4 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01                                             
+                       train/acc: 61.982 train/loss: 0.950  val/acc: 62.121 val/loss: 0.969                                                           
+                                                                                                                                                      
+[02:32:36] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   63.50   63.50                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 63.50 mean 63.50
+           INFO     Total running time: 6.54 seconds.                                                                                     train.py:121
+[02:32:39] INFO     importing modules...done in 2.36 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   5                                                                                
+                      dataset:         facebook    epochs:           5                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+           INFO                           dataset: facebook                                                                               loader.py:76
+                     ───────────────────────────────────────────────────────────                                                                      
+                      nodes:     26,406     mean degree:         80.21                                                                                
+                      edges:     2,117,924  median degree:       62.0                                                                                 
+                      features:  501        train/val/test (%):  75.0/10.0/15.0                                                                       
+                      classes:   6          baseline acc (%):    22.93                                                                                
+                     ───────────────────────────────────────────────────────────                                                                      
+
+           INFO     loading dataset...done in 0.37 s                                                                                       train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:32:41] INFO     noise scale: 0.9325                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.62 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+5
+1 train metrics: {'encoder/train/acc': 37.76239776611328, 'encoder/train/loss': 1.4626551866531372}
+1 val metrics: {'encoder/val/acc': 46.780303955078125, 'encoder/val/loss': 1.2806897163391113}
+2 train metrics: {'encoder/train/acc': 46.427059173583984, 'encoder/train/loss': 1.332294225692749}
+2 val metrics: {'encoder/val/acc': 48.14393997192383, 'encoder/val/loss': 1.3563836812973022}
+3 train metrics: {'encoder/train/acc': 47.99375534057617, 'encoder/train/loss': 1.3519973754882812}
+3 val metrics: {'encoder/val/acc': 48.6363639831543, 'encoder/val/loss': 1.3190504312515259}
+4 train metrics: {'encoder/train/acc': 48.67660903930664, 'encoder/train/loss': 1.3236746788024902}
+4 val metrics: {'encoder/val/acc': 50.1136360168457, 'encoder/val/loss': 1.296687126159668}
+5 train metrics: {'encoder/train/acc': 49.308406829833984, 'encoder/train/loss': 1.3221827745437622}
+5 val metrics: {'encoder/val/acc': 49.8863639831543, 'encoder/val/loss': 1.328791618347168}
+                       overal progress   5/5 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:02                                             
+                       encoder/train/acc: 49.308 encoder/train/loss: 1.322  encoder/val/acc: 49.886 encoder/val/loss: 1.329                           
+                                                                                                                                                      
+[02:32:44] INFO     bounding the number of neighbors per node...done in 1.44 s                                                          gap_ndp.py:100
+           INFO     computing aggregations...done in 0.03 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x181812d60>
+5
+1 train metrics: {'train/acc': 49.743507385253906, 'train/loss': 1.315337896347046}
+1 val metrics: {'val/acc': 57.84090805053711, 'val/loss': 1.0551108121871948}
+2 train metrics: {'train/acc': 59.183345794677734, 'train/loss': 0.9997335076332092}
+2 val metrics: {'val/acc': 59.65909194946289, 'val/loss': 0.9685752391815186}
+3 train metrics: {'train/acc': 60.90465545654297, 'train/loss': 0.9632058143615723}
+3 val metrics: {'val/acc': 62.19697189331055, 'val/loss': 0.9602696299552917}
+4 train metrics: {'train/acc': 62.29737091064453, 'train/loss': 0.9497894644737244}
+4 val metrics: {'val/acc': 62.42424392700195, 'val/loss': 0.9673178195953369}
+5 train metrics: {'train/acc': 62.787879943847656, 'train/loss': 0.9606758952140808}
+5 val metrics: {'val/acc': 62.5, 'val/loss': 0.9634511470794678}
+                       overal progress   5/5 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01                                             
+                       train/acc: 62.788 train/loss: 0.961  val/acc: 62.500 val/loss: 0.963                                                           
+                                                                                                                                                      
+[02:32:46] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   63.75   63.75                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 63.75 mean 63.75
+           INFO     Total running time: 7.48 seconds.                                                                                     train.py:121
+[02:32:49] INFO     importing modules...done in 2.37 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   6                                                                                
+                      dataset:         facebook    epochs:           6                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+           INFO                           dataset: facebook                                                                               loader.py:76
+                     ───────────────────────────────────────────────────────────                                                                      
+                      nodes:     26,406     mean degree:         80.21                                                                                
+                      edges:     2,117,924  median degree:       62.0                                                                                 
+                      features:  501        train/val/test (%):  75.0/10.0/15.0                                                                       
+                      classes:   6          baseline acc (%):    22.93                                                                                
+                     ───────────────────────────────────────────────────────────                                                                      
+
+           INFO     loading dataset...done in 0.35 s                                                                                       train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:32:51] INFO     noise scale: 0.9382                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.47 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+6
+1 train metrics: {'encoder/train/acc': 37.6659049987793, 'encoder/train/loss': 1.463351845741272}
+1 val metrics: {'encoder/val/acc': 46.85606002807617, 'encoder/val/loss': 1.2807196378707886}
+2 train metrics: {'encoder/train/acc': 46.43230438232422, 'encoder/train/loss': 1.33220374584198}
+2 val metrics: {'encoder/val/acc': 48.18181228637695, 'encoder/val/loss': 1.357103943824768}
+3 train metrics: {'encoder/train/acc': 47.9644775390625, 'encoder/train/loss': 1.352142572402954}
+3 val metrics: {'encoder/val/acc': 48.6363639831543, 'encoder/val/loss': 1.319039225578308}
+4 train metrics: {'encoder/train/acc': 48.66926956176758, 'encoder/train/loss': 1.3234548568725586}
+4 val metrics: {'encoder/val/acc': 50.18939208984375, 'encoder/val/loss': 1.2971638441085815}
+5 train metrics: {'encoder/train/acc': 49.307037353515625, 'encoder/train/loss': 1.3218895196914673}
+5 val metrics: {'encoder/val/acc': 49.8863639831543, 'encoder/val/loss': 1.3283462524414062}
+6 train metrics: {'encoder/train/acc': 49.67345428466797, 'encoder/train/loss': 1.325539231300354}
+6 val metrics: {'encoder/val/acc': 50.79545211791992, 'encoder/val/loss': 1.2910237312316895}
+                       overal progress   6/6 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:02                                             
+                       encoder/train/acc: 49.673 encoder/train/loss: 1.326  encoder/val/acc: 50.795 encoder/val/loss: 1.291                           
+                                                                                                                                                      
+[02:32:55] INFO     bounding the number of neighbors per node...done in 1.39 s                                                          gap_ndp.py:100
+           INFO     computing aggregations...done in 0.03 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x18417bb20>
+6
+1 train metrics: {'train/acc': 50.13347625732422, 'train/loss': 1.3042628765106201}
+1 val metrics: {'val/acc': 56.06060791015625, 'val/loss': 1.0510374307632446}
+2 train metrics: {'train/acc': 57.227783203125, 'train/loss': 1.0140089988708496}
+2 val metrics: {'val/acc': 60.98484802246094, 'val/loss': 0.979869544506073}
+3 train metrics: {'train/acc': 59.985374450683594, 'train/loss': 0.9645397067070007}
+3 val metrics: {'val/acc': 62.65151596069336, 'val/loss': 0.9545344710350037}
+4 train metrics: {'train/acc': 61.544857025146484, 'train/loss': 0.9545938968658447}
+4 val metrics: {'val/acc': 63.6363639831543, 'val/loss': 0.9620019793510437}
+5 train metrics: {'train/acc': 61.30006790161133, 'train/loss': 0.9776033163070679}
+5 val metrics: {'val/acc': 63.371212005615234, 'val/loss': 0.9611408114433289}
+6 train metrics: {'train/acc': 62.21311950683594, 'train/loss': 0.9546429514884949}
+6 val metrics: {'val/acc': 63.71211624145508, 'val/loss': 0.9504096508026123}
+                       overal progress   6/6 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:02                                             
+                       train/acc: 62.213 train/loss: 0.955  val/acc: 63.712 val/loss: 0.950                                                           
+                                                                                                                                                      
+[02:32:57] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   64.18   64.18                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 64.18 mean 64.18
+           INFO     Total running time: 8.14 seconds.                                                                                     train.py:121
+[02:33:00] INFO     importing modules...done in 2.47 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   7                                                                                
+                      dataset:         facebook    epochs:           7                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+[02:33:01] INFO                           dataset: facebook                                                                               loader.py:76
+                     ───────────────────────────────────────────────────────────                                                                      
+                      nodes:     26,406     mean degree:         80.21                                                                                
+                      edges:     2,117,924  median degree:       62.0                                                                                 
+                      features:  501        train/val/test (%):  75.0/10.0/15.0                                                                       
+                      classes:   6          baseline acc (%):    22.93                                                                                
+                     ───────────────────────────────────────────────────────────                                                                      
+
+           INFO     loading dataset...done in 0.37 s                                                                                       train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:33:02] INFO     noise scale: 0.9437                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.50 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+7
+1 train metrics: {'encoder/train/acc': 37.566688537597656, 'encoder/train/loss': 1.4641684293746948}
+1 val metrics: {'encoder/val/acc': 46.628787994384766, 'encoder/val/loss': 1.2797231674194336}
+2 train metrics: {'encoder/train/acc': 46.44287872314453, 'encoder/train/loss': 1.330997347831726}
+2 val metrics: {'encoder/val/acc': 48.219696044921875, 'encoder/val/loss': 1.3557683229446411}
+3 train metrics: {'encoder/train/acc': 47.93553161621094, 'encoder/train/loss': 1.3533973693847656}
+3 val metrics: {'encoder/val/acc': 48.59849166870117, 'encoder/val/loss': 1.3190269470214844}
+4 train metrics: {'encoder/train/acc': 48.656978607177734, 'encoder/train/loss': 1.325333595275879}
+4 val metrics: {'encoder/val/acc': 49.96211624145508, 'encoder/val/loss': 1.296635627746582}
+5 train metrics: {'encoder/train/acc': 49.332210540771484, 'encoder/train/loss': 1.3220114707946777}
+5 val metrics: {'encoder/val/acc': 49.35606002807617, 'encoder/val/loss': 1.3287752866744995}
+6 train metrics: {'encoder/train/acc': 49.58488464355469, 'encoder/train/loss': 1.3252414464950562}
+6 val metrics: {'encoder/val/acc': 50.719696044921875, 'encoder/val/loss': 1.289233922958374}
+7 train metrics: {'encoder/train/acc': 50.284515380859375, 'encoder/train/loss': 1.3192675113677979}
+7 val metrics: {'encoder/val/acc': 50.719696044921875, 'encoder/val/loss': 1.3057987689971924}
+                       overal progress   7/7 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:02                                             
+                       encoder/train/acc: 50.285 encoder/train/loss: 1.319  encoder/val/acc: 50.720 encoder/val/loss: 1.306                           
+                                                                                                                                                      
+[02:33:07] INFO     bounding the number of neighbors per node...done in 1.40 s                                                          gap_ndp.py:100
+           INFO     computing aggregations...done in 0.03 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x17fcf8460>
+7
+1 train metrics: {'train/acc': 46.230384826660156, 'train/loss': 1.3388417959213257}
+1 val metrics: {'val/acc': 55.56818771362305, 'val/loss': 1.0707355737686157}
+2 train metrics: {'train/acc': 57.67715072631836, 'train/loss': 1.0258588790893555}
+2 val metrics: {'val/acc': 58.97727584838867, 'val/loss': 0.9948766827583313}
+3 train metrics: {'train/acc': 60.199893951416016, 'train/loss': 0.9819923639297485}
+3 val metrics: {'val/acc': 60.41666793823242, 'val/loss': 0.9722528457641602}
+4 train metrics: {'train/acc': 61.72785186767578, 'train/loss': 0.951805055141449}
+4 val metrics: {'val/acc': 61.931819915771484, 'val/loss': 0.9566588401794434}
+5 train metrics: {'train/acc': 63.02116012573242, 'train/loss': 0.9342749118804932}
+5 val metrics: {'val/acc': 62.53788375854492, 'val/loss': 0.9491369724273682}
+6 train metrics: {'train/acc': 63.32955551147461, 'train/loss': 0.9496715068817139}
+6 val metrics: {'val/acc': 63.219696044921875, 'val/loss': 0.9517941474914551}
+7 train metrics: {'train/acc': 63.85481262207031, 'train/loss': 0.9525719285011292}
+7 val metrics: {'val/acc': 63.371212005615234, 'val/loss': 0.9651897549629211}
+                       overal progress   7/7 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:02                                             
+                       train/acc: 63.855 train/loss: 0.953  val/acc: 63.371 val/loss: 0.965                                                           
+                                                                                                                                                      
+[02:33:09] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   64.18   64.18                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 64.18 mean 64.18
+           INFO     Total running time: 8.48 seconds.                                                                                     train.py:121
+[02:33:12] INFO     importing modules...done in 2.33 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   8                                                                                
+                      dataset:         facebook    epochs:           8                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+           INFO                           dataset: facebook                                                                               loader.py:76
+                     ───────────────────────────────────────────────────────────                                                                      
+                      nodes:     26,406     mean degree:         80.21                                                                                
+                      edges:     2,117,924  median degree:       62.0                                                                                 
+                      features:  501        train/val/test (%):  75.0/10.0/15.0                                                                       
+                      classes:   6          baseline acc (%):    22.93                                                                                
+                     ───────────────────────────────────────────────────────────                                                                      
+
+           INFO     loading dataset...done in 0.35 s                                                                                       train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:33:14] INFO     noise scale: 0.9492                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.56 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+8
+1 train metrics: {'encoder/train/acc': 37.49496078491211, 'encoder/train/loss': 1.4647085666656494}
+1 val metrics: {'encoder/val/acc': 46.66666793823242, 'encoder/val/loss': 1.2797470092773438}
+2 train metrics: {'encoder/train/acc': 46.41831588745117, 'encoder/train/loss': 1.3306790590286255}
+2 val metrics: {'encoder/val/acc': 48.18181228637695, 'encoder/val/loss': 1.355901837348938}
+3 train metrics: {'encoder/train/acc': 47.92799758911133, 'encoder/train/loss': 1.3535661697387695}
+3 val metrics: {'encoder/val/acc': 48.56060791015625, 'encoder/val/loss': 1.3187848329544067}
+4 train metrics: {'encoder/train/acc': 48.6160774230957, 'encoder/train/loss': 1.3250941038131714}
+4 val metrics: {'encoder/val/acc': 50.1136360168457, 'encoder/val/loss': 1.296311378479004}
+5 train metrics: {'encoder/train/acc': 49.282535552978516, 'encoder/train/loss': 1.3217610120773315}
+5 val metrics: {'encoder/val/acc': 49.469696044921875, 'encoder/val/loss': 1.329647421836853}
+6 train metrics: {'encoder/train/acc': 49.57903289794922, 'encoder/train/loss': 1.3248640298843384}
+6 val metrics: {'encoder/val/acc': 50.7575798034668, 'encoder/val/loss': 1.2899059057235718}
+7 train metrics: {'encoder/train/acc': 50.302040100097656, 'encoder/train/loss': 1.319051742553711}
+7 val metrics: {'encoder/val/acc': 50.68181228637695, 'encoder/val/loss': 1.3047581911087036}
+8 train metrics: {'encoder/train/acc': 49.743408203125, 'encoder/train/loss': 1.3381787538528442}
+8 val metrics: {'encoder/val/acc': 50.22727584838867, 'encoder/val/loss': 1.31270432472229}
+                       overal progress   8/8 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:03                                             
+                       encoder/train/acc: 49.743 encoder/train/loss: 1.338  encoder/val/acc: 50.227 encoder/val/loss: 1.313                           
+                                                                                                                                                      
+[02:33:18] INFO     bounding the number of neighbors per node...done in 1.39 s                                                          gap_ndp.py:100
+           INFO     computing aggregations...done in 0.03 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x17f4eaac0>
+8
+1 train metrics: {'train/acc': 47.338401794433594, 'train/loss': 1.3252284526824951}
+1 val metrics: {'val/acc': 55.22727584838867, 'val/loss': 1.0748615264892578}
+2 train metrics: {'train/acc': 56.9980354309082, 'train/loss': 1.0359139442443848}
+2 val metrics: {'val/acc': 59.431819915771484, 'val/loss': 0.9929574131965637}
+3 train metrics: {'train/acc': 59.606788635253906, 'train/loss': 0.9882573485374451}
+3 val metrics: {'val/acc': 62.3863639831543, 'val/loss': 0.964093029499054}
+4 train metrics: {'train/acc': 61.413719177246094, 'train/loss': 0.9530346989631653}
+4 val metrics: {'val/acc': 61.17424392700195, 'val/loss': 0.9626362919807434}
+5 train metrics: {'train/acc': 61.73850631713867, 'train/loss': 0.9499068856239319}
+5 val metrics: {'val/acc': 62.5, 'val/loss': 0.9656519889831543}
+6 train metrics: {'train/acc': 61.967342376708984, 'train/loss': 0.9713254570960999}
+6 val metrics: {'val/acc': 63.14393997192383, 'val/loss': 0.9636698365211487}
+7 train metrics: {'train/acc': 63.24469757080078, 'train/loss': 0.9460992217063904}
+7 val metrics: {'val/acc': 63.6363639831543, 'val/loss': 0.970536470413208}
+8 train metrics: {'train/acc': 62.467445373535156, 'train/loss': 0.9588847160339355}
+8 val metrics: {'val/acc': 63.14393997192383, 'val/loss': 0.9609429836273193}
+                       overal progress   8/8 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:02                                             
+                       train/acc: 62.467 train/loss: 0.959  val/acc: 63.144 val/loss: 0.961                                                           
+                                                                                                                                                      
+[02:33:21] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   62.51   62.51                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 62.51 mean 62.51
+           INFO     Total running time: 9.33 seconds.                                                                                     train.py:121
+[02:33:24] INFO     importing modules...done in 2.35 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   9                                                                                
+                      dataset:         facebook    epochs:           9                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+           INFO                           dataset: facebook                                                                               loader.py:76
+                     ───────────────────────────────────────────────────────────                                                                      
+                      nodes:     26,406     mean degree:         80.21                                                                                
+                      edges:     2,117,924  median degree:       62.0                                                                                 
+                      features:  501        train/val/test (%):  75.0/10.0/15.0                                                                       
+                      classes:   6          baseline acc (%):    22.93                                                                                
+                     ───────────────────────────────────────────────────────────                                                                      
+
+           INFO     loading dataset...done in 0.35 s                                                                                       train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:33:26] INFO     noise scale: 0.9544                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.48 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+9
+1 train metrics: {'encoder/train/acc': 37.51069641113281, 'encoder/train/loss': 1.4652518033981323}
+1 val metrics: {'encoder/val/acc': 46.66666793823242, 'encoder/val/loss': 1.279542326927185}
+2 train metrics: {'encoder/train/acc': 46.41420364379883, 'encoder/train/loss': 1.3303589820861816}
+2 val metrics: {'encoder/val/acc': 48.219696044921875, 'encoder/val/loss': 1.3553491830825806}
+3 train metrics: {'encoder/train/acc': 47.91332244873047, 'encoder/train/loss': 1.3536287546157837}
+3 val metrics: {'encoder/val/acc': 48.44697189331055, 'encoder/val/loss': 1.3185639381408691}
+4 train metrics: {'encoder/train/acc': 48.66529083251953, 'encoder/train/loss': 1.325077772140503}
+4 val metrics: {'encoder/val/acc': 50.07575607299805, 'encoder/val/loss': 1.2965896129608154}
+5 train metrics: {'encoder/train/acc': 49.2879524230957, 'encoder/train/loss': 1.3216207027435303}
+5 val metrics: {'encoder/val/acc': 49.280303955078125, 'encoder/val/loss': 1.329081654548645}
+6 train metrics: {'encoder/train/acc': 49.54255294799805, 'encoder/train/loss': 1.3248456716537476}
+6 val metrics: {'encoder/val/acc': 50.7575798034668, 'encoder/val/loss': 1.2896462678909302}
+7 train metrics: {'encoder/train/acc': 50.31962203979492, 'encoder/train/loss': 1.3190773725509644}
+7 val metrics: {'encoder/val/acc': 50.68181228637695, 'encoder/val/loss': 1.305047869682312}
+8 train metrics: {'encoder/train/acc': 49.67094421386719, 'encoder/train/loss': 1.3385096788406372}
+8 val metrics: {'encoder/val/acc': 50.22727584838867, 'encoder/val/loss': 1.3132727146148682}
+9 train metrics: {'encoder/train/acc': 50.81574249267578, 'encoder/train/loss': 1.3318110704421997}
+9 val metrics: {'encoder/val/acc': 51.17424011230469, 'encoder/val/loss': 1.3527507781982422}
+                       overal progress   9/9 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:03                                             
+                       encoder/train/acc: 50.816 encoder/train/loss: 1.332  encoder/val/acc: 51.174 encoder/val/loss: 1.353                           
+                                                                                                                                                      
+[02:33:31] INFO     bounding the number of neighbors per node...done in 1.45 s                                                          gap_ndp.py:100
+           INFO     computing aggregations...done in 0.03 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x181b85880>
+9
+1 train metrics: {'train/acc': 48.998008728027344, 'train/loss': 1.3146350383758545}
+1 val metrics: {'val/acc': 57.5, 'val/loss': 1.0512374639511108}
+2 train metrics: {'train/acc': 60.22527313232422, 'train/loss': 0.9932094216346741}
+2 val metrics: {'val/acc': 60.26515197753906, 'val/loss': 0.9769545197486877}
+3 train metrics: {'train/acc': 61.4066276550293, 'train/loss': 0.953838586807251}
+3 val metrics: {'val/acc': 62.0075798034668, 'val/loss': 0.9679186344146729}
+4 train metrics: {'train/acc': 62.77488327026367, 'train/loss': 0.9461246728897095}
+4 val metrics: {'val/acc': 62.6136360168457, 'val/loss': 0.9678683876991272}
+5 train metrics: {'train/acc': 62.81749725341797, 'train/loss': 0.9402838945388794}
+5 val metrics: {'val/acc': 63.6363639831543, 'val/loss': 0.9580363631248474}
+6 train metrics: {'train/acc': 63.236087799072266, 'train/loss': 0.9357572793960571}
+6 val metrics: {'val/acc': 62.3863639831543, 'val/loss': 0.974055826663971}
+7 train metrics: {'train/acc': 62.53269958496094, 'train/loss': 0.9572095274925232}
+7 val metrics: {'val/acc': 63.93939208984375, 'val/loss': 0.9773094654083252}
+8 train metrics: {'train/acc': 63.42509078979492, 'train/loss': 0.9566528797149658}
+8 val metrics: {'val/acc': 63.90150833129883, 'val/loss': 0.9789164066314697}
+9 train metrics: {'train/acc': 63.70829772949219, 'train/loss': 0.9429752826690674}
+9 val metrics: {'val/acc': 62.91666793823242, 'val/loss': 0.9864465594291687}
+                       overal progress   9/9 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:02                                             
+                       train/acc: 63.708 train/loss: 0.943  val/acc: 62.917 val/loss: 0.986                                                           
+                                                                                                                                                      
+[02:33:34] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   63.17   63.17                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 63.17 mean 63.17
+           INFO     Total running time: 10.03 seconds.                                                                                    train.py:121
+[02:33:37] INFO     importing modules...done in 2.34 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   10                                                                               
+                      dataset:         facebook    epochs:           10                                                                               
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+           INFO                           dataset: facebook                                                                               loader.py:76
+                     ───────────────────────────────────────────────────────────                                                                      
+                      nodes:     26,406     mean degree:         80.21                                                                                
+                      edges:     2,117,924  median degree:       62.0                                                                                 
+                      features:  501        train/val/test (%):  75.0/10.0/15.0                                                                       
+                      classes:   6          baseline acc (%):    22.93                                                                                
+                     ───────────────────────────────────────────────────────────                                                                      
+
+           INFO     loading dataset...done in 0.35 s                                                                                       train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:33:39] INFO     noise scale: 0.9596                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.54 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+10
+1 train metrics: {'encoder/train/acc': 37.449462890625, 'encoder/train/loss': 1.4656931161880493}
+1 val metrics: {'encoder/val/acc': 46.628787994384766, 'encoder/val/loss': 1.27944016456604}
+2 train metrics: {'encoder/train/acc': 46.42049789428711, 'encoder/train/loss': 1.329954981803894}
+2 val metrics: {'encoder/val/acc': 48.2575798034668, 'encoder/val/loss': 1.3552261590957642}
+3 train metrics: {'encoder/train/acc': 47.84565353393555, 'encoder/train/loss': 1.3538891077041626}
+3 val metrics: {'encoder/val/acc': 48.48484802246094, 'encoder/val/loss': 1.3185495138168335}
+4 train metrics: {'encoder/train/acc': 48.690311431884766, 'encoder/train/loss': 1.3253400325775146}
+4 val metrics: {'encoder/val/acc': 49.92424392700195, 'encoder/val/loss': 1.2964576482772827}
+5 train metrics: {'encoder/train/acc': 49.33543014526367, 'encoder/train/loss': 1.3214672803878784}
+5 val metrics: {'encoder/val/acc': 49.20454788208008, 'encoder/val/loss': 1.3285343647003174}
+6 train metrics: {'encoder/train/acc': 49.54179763793945, 'encoder/train/loss': 1.3246287107467651}
+6 val metrics: {'encoder/val/acc': 50.83333206176758, 'encoder/val/loss': 1.2887930870056152}
+7 train metrics: {'encoder/train/acc': 50.27882385253906, 'encoder/train/loss': 1.3185787200927734}
+7 val metrics: {'encoder/val/acc': 50.7575798034668, 'encoder/val/loss': 1.3041900396347046}
+8 train metrics: {'encoder/train/acc': 49.73506164550781, 'encoder/train/loss': 1.3379393815994263}
+8 val metrics: {'encoder/val/acc': 50.18939208984375, 'encoder/val/loss': 1.312299132347107}
+9 train metrics: {'encoder/train/acc': 50.858306884765625, 'encoder/train/loss': 1.3313850164413452}
+9 val metrics: {'encoder/val/acc': 51.28787612915039, 'encoder/val/loss': 1.3525704145431519}
+10 train metrics: {'encoder/train/acc': 50.540924072265625, 'encoder/train/loss': 1.3355578184127808}
+10 val metrics: {'encoder/val/acc': 49.8863639831543, 'encoder/val/loss': 1.3574433326721191}
+                       overal progress  10/10 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:04                                            
+                       encoder/train/acc: 50.541 encoder/train/loss: 1.336  encoder/val/acc: 49.886 encoder/val/loss: 1.357                           
+                                                                                                                                                      
+[02:33:44] INFO     bounding the number of neighbors per node...done in 1.40 s                                                          gap_ndp.py:100
+           INFO     computing aggregations...done in 0.03 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x183823b20>
+10
+1 train metrics: {'train/acc': 51.40432357788086, 'train/loss': 1.298723816871643}
+1 val metrics: {'val/acc': 58.29545211791992, 'val/loss': 1.0539411306381226}
+2 train metrics: {'train/acc': 59.49553298950195, 'train/loss': 0.9915909767150879}
+2 val metrics: {'val/acc': 59.84849166870117, 'val/loss': 0.9759566783905029}
+3 train metrics: {'train/acc': 61.74542236328125, 'train/loss': 0.957548201084137}
+3 val metrics: {'val/acc': 60.90909194946289, 'val/loss': 0.9639685153961182}
+4 train metrics: {'train/acc': 61.5935173034668, 'train/loss': 0.9500771760940552}
+4 val metrics: {'val/acc': 62.27272415161133, 'val/loss': 0.96014004945755}
+5 train metrics: {'train/acc': 63.11156463623047, 'train/loss': 0.9498358964920044}
+5 val metrics: {'val/acc': 62.31060791015625, 'val/loss': 0.9616807103157043}
+6 train metrics: {'train/acc': 63.23374938964844, 'train/loss': 0.9370196461677551}
+6 val metrics: {'val/acc': 62.53788375854492, 'val/loss': 0.968702495098114}
+7 train metrics: {'train/acc': 63.056819915771484, 'train/loss': 0.9516585469245911}
+7 val metrics: {'val/acc': 63.030303955078125, 'val/loss': 0.9706730842590332}
+8 train metrics: {'train/acc': 63.41035461425781, 'train/loss': 0.9625791311264038}
+8 val metrics: {'val/acc': 62.72727584838867, 'val/loss': 0.9649250507354736}
+9 train metrics: {'train/acc': 64.0015869140625, 'train/loss': 0.947124719619751}
+9 val metrics: {'val/acc': 62.04545593261719, 'val/loss': 0.9697067737579346}
+10 train metrics: {'train/acc': 63.5037727355957, 'train/loss': 0.9577993154525757}
+10 val metrics: {'val/acc': 62.53788375854492, 'val/loss': 0.9694771766662598}
+                       overal progress  10/10 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:03                                            
+                       train/acc: 63.504 train/loss: 0.958  val/acc: 62.538 val/loss: 0.969                                                           
+                                                                                                                                                      
+[02:33:48] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   64.36   64.36                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 64.36 mean 64.36
+           INFO     Total running time: 10.98 seconds.                                                                                    train.py:121
+[02:37:38] INFO     importing modules...done in 3.60 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   1                                                                                
+                      dataset:         reddit      epochs:           1                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+[02:40:06] INFO                            dataset: reddit                                                                                loader.py:76
+                     ────────────────────────────────────────────────────────────                                                                     
+                      nodes:     116,713     mean degree:         396.13                                                                              
+                      edges:     46,233,380  median degree:       209.0                                                                               
+                      features:  602         train/val/test (%):  75.0/10.0/15.0                                                                      
+                      classes:   8           baseline acc (%):    24.35                                                                               
+                     ────────────────────────────────────────────────────────────                                                                     
+
+           INFO     loading dataset...done in 148.04 s                                                                                     train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:40:08] INFO     noise scale: 0.9033                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.53 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+1
+1 train metrics: {'encoder/train/acc': 69.26730346679688, 'encoder/train/loss': 0.9426160454750061}
+1 val metrics: {'encoder/val/acc': 75.23171997070312, 'encoder/val/loss': 0.7945768237113953}
+                       overal progress   1/1 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:02                                             
+                       encoder/train/acc: 69.267 encoder/train/loss: 0.943  encoder/val/acc: 75.232 encoder/val/loss: 0.795                           
+                                                                                                                                                      
+[02:40:25] INFO     bounding the number of neighbors per node...done in 14.42 s                                                         gap_ndp.py:100
+           INFO     computing aggregations...done in 0.19 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x178a342b0>
+1
+1 train metrics: {'train/acc': 86.02264404296875, 'train/loss': 0.511913001537323}
+1 val metrics: {'val/acc': 90.8427734375, 'val/loss': 0.299984872341156}
+                       overal progress   1/1 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01                                             
+                       train/acc: 86.023 train/loss: 0.512  val/acc: 90.843 val/loss: 0.300                                                           
+                                                                                                                                                      
+[02:40:27] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   91.00   91.00                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 91.00 mean 91.00
+           INFO     Total running time: 168.64 seconds.                                                                                   train.py:121
+[02:40:31] INFO     importing modules...done in 3.00 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   2                                                                                
+                      dataset:         reddit      epochs:           2                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+[02:40:46] INFO                            dataset: reddit                                                                                loader.py:76
+                     ────────────────────────────────────────────────────────────                                                                     
+                      nodes:     116,713     mean degree:         396.13                                                                              
+                      edges:     46,233,380  median degree:       209.0                                                                               
+                      features:  602         train/val/test (%):  75.0/10.0/15.0                                                                      
+                      classes:   8           baseline acc (%):    24.35                                                                               
+                     ────────────────────────────────────────────────────────────                                                                     
+
+           INFO     loading dataset...done in 14.95 s                                                                                      train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:40:47] INFO     noise scale:
+                                                                                                 gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.53 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+2
+1 train metrics: {'encoder/train/acc': 69.26301574707031, 'encoder/train/loss': 0.9429147243499756}
+1 val metrics: {'encoder/val/acc': 75.20597839355469, 'encoder/val/loss': 0.7947098612785339}
+2 train metrics: {'encoder/train/acc': 76.87987518310547, 'encoder/train/loss': 0.7874457836151123}
+2 val metrics: {'encoder/val/acc': 76.46755981445312, 'encoder/val/loss': 0.8263114094734192}
+                       overal progress   2/2 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:04                                             
+                       encoder/train/acc: 76.880 encoder/train/loss: 0.787  encoder/val/acc: 76.468 encoder/val/loss: 0.826                           
+                                                                                                                                                      
+[02:41:07] INFO     bounding the number of neighbors per node...done in 14.40 s                                                         gap_ndp.py:100
+           INFO     computing aggregations...done in 0.18 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x17ae301c0>
+2
+1 train metrics: {'train/acc': 87.22815704345703, 'train/loss': 0.497567743062973}
+1 val metrics: {'val/acc': 90.97150421142578, 'val/loss': 0.29602527618408203}
+2 train metrics: {'train/acc': 91.76824951171875, 'train/loss': 0.2718825936317444}
+2 val metrics: {'val/acc': 91.460693359375, 'val/loss': 0.272602379322052}
+                       overal progress   2/2 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:03                                             
+                       train/acc: 91.768 train/loss: 0.272  val/acc: 91.461 val/loss: 0.273                                                           
+                                                                                                                                                      
+[02:41:10] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   91.74   91.74                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 91.74 mean 91.74
+           INFO     Total running time: 39.53 seconds.                                                                                    train.py:121
+[02:41:14] INFO     importing modules...done in 2.71 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   3                                                                                
+                      dataset:         reddit      epochs:           3                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+[02:41:28] INFO                            dataset: reddit                                                                                loader.py:76
+                     ────────────────────────────────────────────────────────────                                                                     
+                      nodes:     116,713     mean degree:         396.13                                                                              
+                      edges:     46,233,380  median degree:       209.0                                                                               
+                      features:  602         train/val/test (%):  75.0/10.0/15.0                                                                      
+                      classes:   8           baseline acc (%):    24.35                                                                               
+                     ────────────────────────────────────────────────────────────                                                                     
+
+           INFO     loading dataset...done in 14.12 s                                                                                      train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:41:29] INFO     noise scale: 0.9063                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.51 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+3
+1 train metrics: {'encoder/train/acc': 69.23258209228516, 'encoder/train/loss': 0.9432691931724548}
+1 val metrics: {'encoder/val/acc': 75.26605224609375, 'encoder/val/loss': 0.7948110103607178}
+2 train metrics: {'encoder/train/acc': 76.8807373046875, 'encoder/train/loss': 0.7876235842704773}
+2 val metrics: {'encoder/val/acc': 76.40748596191406, 'encoder/val/loss': 0.8262333869934082}
+3 train metrics: {'encoder/train/acc': 77.62812042236328, 'encoder/train/loss': 0.7836092114448547}
+3 val metrics: {'encoder/val/acc': 77.17130279541016, 'encoder/val/loss': 0.7969077229499817}
+                       overal progress   3/3 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:07                                             
+                       encoder/train/acc: 77.628 encoder/train/loss: 0.784  encoder/val/acc: 77.171 encoder/val/loss: 0.797                           
+                                                                                                                                                      
+[02:41:51] INFO     bounding the number of neighbors per node...done in 14.25 s                                                         gap_ndp.py:100
+           INFO     computing aggregations...done in 0.17 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x157729e50>
+3
+1 train metrics: {'train/acc': 86.82762145996094, 'train/loss': 0.5027784705162048}
+1 val metrics: {'val/acc': 90.91143035888672, 'val/loss': 0.3006311357021332}
+2 train metrics: {'train/acc': 91.5237045288086, 'train/loss': 0.2770092785358429}
+2 val metrics: {'val/acc': 91.2032241821289, 'val/loss': 0.2828214168548584}
+3 train metrics: {'train/acc': 91.86930847167969, 'train/loss': 0.2636511027812958}
+3 val metrics: {'val/acc': 91.26329803466797, 'val/loss': 0.2768854796886444}
+                       overal progress   3/3 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05                                             
+                       train/acc: 91.869 train/loss: 0.264  val/acc: 91.263 val/loss: 0.277                                                           
+                                                                                                                                                      
+[02:41:56] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   91.57   91.57                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 91.57 mean 91.57
+           INFO     Total running time: 42.70 seconds.                                                                                    train.py:121
+[02:42:00] INFO     importing modules...done in 2.67 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   4                                                                                
+                      dataset:         reddit      epochs:           4                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+[02:42:14] INFO                            dataset: reddit                                                                                loader.py:76
+                     ────────────────────────────────────────────────────────────                                                                     
+                      nodes:     116,713     mean degree:         396.13                                                                              
+                      edges:     46,233,380  median degree:       209.0                                                                               
+                      features:  602         train/val/test (%):  75.0/10.0/15.0                                                                      
+                      classes:   8           baseline acc (%):    24.35                                                                               
+                     ────────────────────────────────────────────────────────────                                                                     
+
+           INFO     loading dataset...done in 14.16 s                                                                                      train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:42:16] INFO     noise scale: 0.9078                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.62 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+4
+1 train metrics: {'encoder/train/acc': 69.22783660888672, 'encoder/train/loss': 0.9435941576957703}
+1 val metrics: {'encoder/val/acc': 75.24888610839844, 'encoder/val/loss': 0.7949636578559875}
+2 train metrics: {'encoder/train/acc': 76.87393188476562, 'encoder/train/loss': 0.7877488136291504}
+2 val metrics: {'encoder/val/acc': 76.40748596191406, 'encoder/val/loss': 0.8264523148536682}
+3 train metrics: {'encoder/train/acc': 77.60903930664062, 'encoder/train/loss': 0.7837657928466797}
+3 val metrics: {'encoder/val/acc': 77.17130279541016, 'encoder/val/loss': 0.7970070838928223}
+4 train metrics: {'encoder/train/acc': 78.4442138671875, 'encoder/train/loss': 0.7634190320968628}
+4 val metrics: {'encoder/val/acc': 77.23137664794922, 'encoder/val/loss': 0.8146438002586365}
+                       overal progress   4/4 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:10                                             
+                       encoder/train/acc: 78.444 encoder/train/loss: 0.763  encoder/val/acc: 77.231 encoder/val/loss: 0.815                           
+                                                                                                                                                      
+[02:42:41] INFO     bounding the number of neighbors per node...done in 14.93 s                                                         gap_ndp.py:100
+           INFO     computing aggregations...done in 0.17 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x10e103b80>
+4
+1 train metrics: {'train/acc': 87.49259948730469, 'train/loss': 0.49195441603660583}
+1 val metrics: {'val/acc': 91.3233871459961, 'val/loss': 0.2939067780971527}
+2 train metrics: {'train/acc': 91.77189636230469, 'train/loss': 0.26893293857574463}
+2 val metrics: {'val/acc': 91.52935028076172, 'val/loss': 0.27430859208106995}
+3 train metrics: {'train/acc': 91.91995239257812, 'train/loss': 0.2612541913986206}
+3 val metrics: {'val/acc': 91.55509185791016, 'val/loss': 0.27237069606781006}
+4 train metrics: {'train/acc': 92.06520080566406, 'train/loss': 0.2586096525192261}
+4 val metrics: {'val/acc': 91.7181625366211, 'val/loss': 0.2654326856136322}
+                       overal progress   4/4 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06                                             
+                       train/acc: 92.065 train/loss: 0.259  val/acc: 91.718 val/loss: 0.265                                                           
+                                                                                                                                                      
+[02:42:47] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   91.96   91.96                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 91.96 mean 91.96
+[02:42:48] INFO     Total running time: 47.72 seconds.                                                                                    train.py:121
+[02:42:51] INFO     importing modules...done in 2.62 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   5                                                                                
+                      dataset:         reddit      epochs:           5                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+[02:43:05] INFO                            dataset: reddit                                                                                loader.py:76
+                     ────────────────────────────────────────────────────────────                                                                     
+                      nodes:     116,713     mean degree:         396.13                                                                              
+                      edges:     46,233,380  median degree:       209.0                                                                               
+                      features:  602         train/val/test (%):  75.0/10.0/15.0                                                                      
+                      classes:   8           baseline acc (%):    24.35                                                                               
+                     ────────────────────────────────────────────────────────────                                                                     
+
+           INFO     loading dataset...done in 14.00 s                                                                                      train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:43:06] INFO     noise scale: 0.9093                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.53 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+5
+1 train metrics: {'encoder/train/acc': 69.22175598144531, 'encoder/train/loss': 0.9437713027000427}
+1 val metrics: {'encoder/val/acc': 75.18022918701172, 'encoder/val/loss': 0.7949955463409424}
+2 train metrics: {'encoder/train/acc': 76.86758422851562, 'encoder/train/loss': 0.7879132032394409}
+2 val metrics: {'encoder/val/acc': 76.3817367553711, 'encoder/val/loss': 0.8263685703277588}
+3 train metrics: {'encoder/train/acc': 77.61061096191406, 'encoder/train/loss': 0.7839056849479675}
+3 val metrics: {'encoder/val/acc': 77.15413665771484, 'encoder/val/loss': 0.7969674468040466}
+4 train metrics: {'encoder/train/acc': 78.42707824707031, 'encoder/train/loss': 0.7636319398880005}
+4 val metrics: {'encoder/val/acc': 77.22279357910156, 'encoder/val/loss': 0.8146154880523682}
+5 train metrics: {'encoder/train/acc': 78.71746063232422, 'encoder/train/loss': 0.750861644744873}
+5 val metrics: {'encoder/val/acc': 77.56607818603516, 'encoder/val/loss': 0.8003285527229309}
+                       overal progress   5/5 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:11                                             
+                       encoder/train/acc: 78.717 encoder/train/loss: 0.751  encoder/val/acc: 77.566 encoder/val/loss: 0.800                           
+                                                                                                                                                      
+[02:43:33] INFO     bounding the number of neighbors per node...done in 14.76 s                                                         gap_ndp.py:100
+           INFO     computing aggregations...done in 0.16 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x1781943a0>
+5
+1 train metrics: {'train/acc': 86.94114685058594, 'train/loss': 0.5003610253334045}
+1 val metrics: {'val/acc': 91.4349594116211, 'val/loss': 0.29000595211982727}
+2 train metrics: {'train/acc': 91.93014526367188, 'train/loss': 0.2663194537162781}
+2 val metrics: {'val/acc': 91.75247955322266, 'val/loss': 0.2725447416305542}
+3 train metrics: {'train/acc': 91.8880386352539, 'train/loss': 0.26297587156295776}
+3 val metrics: {'val/acc': 91.85547637939453, 'val/loss': 0.26718541979789734}
+4 train metrics: {'train/acc': 92.19339752197266, 'train/loss': 0.2547603249549866}
+4 val metrics: {'val/acc': 92.09578704833984, 'val/loss': 0.2633342742919922}
+5 train metrics: {'train/acc': 92.14320373535156, 'train/loss': 0.2578671872615814}
+5 val metrics: {'val/acc': 92.08719635009766, 'val/loss': 0.2635039687156677}
+                       overal progress   5/5 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:08                                             
+                       train/acc: 92.143 train/loss: 0.258  val/acc: 92.087 val/loss: 0.264                                                           
+                                                                                                                                                      
+[02:43:42] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   92.09   92.09                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 92.09 mean 92.09
+           INFO     Total running time: 51.46 seconds.                                                                                    train.py:121
+[02:43:46] INFO     importing modules...done in 2.76 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   6                                                                                
+                      dataset:         reddit      epochs:           6                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+[02:44:00] INFO                            dataset: reddit                                                                                loader.py:76
+                     ────────────────────────────────────────────────────────────                                                                     
+                      nodes:     116,713     mean degree:         396.13                                                                              
+                      edges:     46,233,380  median degree:       209.0                                                                               
+                      features:  602         train/val/test (%):  75.0/10.0/15.0                                                                      
+                      classes:   8           baseline acc (%):    24.35                                                                               
+                     ────────────────────────────────────────────────────────────                                                                     
+
+           INFO     loading dataset...done in 13.98 s                                                                                      train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:44:01] INFO     noise scale: 0.9108                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.56 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+6
+1 train metrics: {'encoder/train/acc': 69.19969940185547, 'encoder/train/loss': 0.9442393779754639}
+1 val metrics: {'encoder/val/acc': 75.18881225585938, 'encoder/val/loss': 0.7954676747322083}
+2 train metrics: {'encoder/train/acc': 76.84698486328125, 'encoder/train/loss': 0.7881070375442505}
+2 val metrics: {'encoder/val/acc': 76.3817367553711, 'encoder/val/loss': 0.8265094757080078}
+3 train metrics: {'encoder/train/acc': 77.58911895751953, 'encoder/train/loss': 0.7840754985809326}
+3 val metrics: {'encoder/val/acc': 77.15413665771484, 'encoder/val/loss': 0.7972328066825867}
+4 train metrics: {'encoder/train/acc': 78.44577026367188, 'encoder/train/loss': 0.763836145401001}
+4 val metrics: {'encoder/val/acc': 77.2142105102539, 'encoder/val/loss': 0.8147863745689392}
+5 train metrics: {'encoder/train/acc': 78.6937255859375, 'encoder/train/loss': 0.7511284351348877}
+5 val metrics: {'encoder/val/acc': 77.58324432373047, 'encoder/val/loss': 0.80049729347229}
+6 train metrics: {'encoder/train/acc': 79.02775573730469, 'encoder/train/loss': 0.7456079125404358}
+6 val metrics: {'encoder/val/acc': 77.96945190429688, 'encoder/val/loss': 0.7789409160614014}
+                       overal progress   6/6 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:13                                             
+                       encoder/train/acc: 79.028 encoder/train/loss: 0.746  encoder/val/acc: 77.969 encoder/val/loss: 0.779                           
+                                                                                                                                                      
+[02:44:29] INFO     bounding the number of neighbors per node...done in 14.12 s                                                         gap_ndp.py:100
+           INFO     computing aggregations...done in 0.18 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x17f437ee0>
+6
+1 train metrics: {'train/acc': 87.07656860351562, 'train/loss': 0.4881269037723541}
+1 val metrics: {'val/acc': 91.28046417236328, 'val/loss': 0.2929619550704956}
+2 train metrics: {'train/acc': 91.53285217285156, 'train/loss': 0.2783743143081665}
+2 val metrics: {'val/acc': 91.4006118774414, 'val/loss': 0.27826473116874695}
+3 train metrics: {'train/acc': 91.70303344726562, 'train/loss': 0.27005741000175476}
+3 val metrics: {'val/acc': 91.67525482177734, 'val/loss': 0.2713755965232849}
+4 train metrics: {'train/acc': 91.931884765625, 'train/loss': 0.26131996512413025}
+4 val metrics: {'val/acc': 91.6323471069336, 'val/loss': 0.2734209895133972}
+5 train metrics: {'train/acc': 92.13167572021484, 'train/loss': 0.2579663395881653}
+5 val metrics: {'val/acc': 91.67525482177734, 'val/loss': 0.27105948328971863}
+6 train metrics: {'train/acc': 92.0595474243164, 'train/loss': 0.2624354660511017}
+6 val metrics: {'val/acc': 91.88121795654297, 'val/loss': 0.2683253288269043}
+                       overal progress   6/6 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:10                                             
+                       train/acc: 92.060 train/loss: 0.262  val/acc: 91.881 val/loss: 0.268                                                           
+                                                                                                                                                      
+[02:44:39] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   92.10   92.10                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 92.10 mean 92.10
+           INFO     Total running time: 53.61 seconds.                                                                                    train.py:121
+[02:44:42] INFO     importing modules...done in 2.46 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   7                                                                                
+                      dataset:         reddit      epochs:           7                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+[02:44:56] INFO                            dataset: reddit                                                                                loader.py:76
+                     ────────────────────────────────────────────────────────────                                                                     
+                      nodes:     116,713     mean degree:         396.13                                                                              
+                      edges:     46,233,380  median degree:       209.0                                                                               
+                      features:  602         train/val/test (%):  75.0/10.0/15.0                                                                      
+                      classes:   8           baseline acc (%):    24.35                                                                               
+                     ────────────────────────────────────────────────────────────                                                                     
+
+           INFO     loading dataset...done in 13.93 s                                                                                      train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:44:58] INFO     noise scale: 0.9123                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.55 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+7
+1 train metrics: {'encoder/train/acc': 69.18973541259766, 'encoder/train/loss': 0.9444432258605957}
+1 val metrics: {'encoder/val/acc': 75.21455383300781, 'encoder/val/loss': 0.7955628037452698}
+2 train metrics: {'encoder/train/acc': 76.84725952148438, 'encoder/train/loss': 0.7881711721420288}
+2 val metrics: {'encoder/val/acc': 76.42464447021484, 'encoder/val/loss': 0.8267799019813538}
+3 train metrics: {'encoder/train/acc': 77.59078216552734, 'encoder/train/loss': 0.784168004989624}
+3 val metrics: {'encoder/val/acc': 77.14555358886719, 'encoder/val/loss': 0.7971484065055847}
+4 train metrics: {'encoder/train/acc': 78.41912078857422, 'encoder/train/loss': 0.7638659477233887}
+4 val metrics: {'encoder/val/acc': 77.18846893310547, 'encoder/val/loss': 0.8150774836540222}
+5 train metrics: {'encoder/train/acc': 78.69792938232422, 'encoder/train/loss': 0.7512053847312927}
+5 val metrics: {'encoder/val/acc': 77.54891967773438, 'encoder/val/loss': 0.8004668354988098}
+6 train metrics: {'encoder/train/acc': 79.03568267822266, 'encoder/train/loss': 0.7457283735275269}
+6 val metrics: {'encoder/val/acc': 78.00377655029297, 'encoder/val/loss': 0.7789702415466309}
+7 train metrics: {'encoder/train/acc': 79.26513671875, 'encoder/train/loss': 0.7273650169372559}
+7 val metrics: {'encoder/val/acc': 77.70339965820312, 'encoder/val/loss': 0.7743094563484192}
+                       overal progress   7/7 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:15                                             
+                       encoder/train/acc: 79.265 encoder/train/loss: 0.727  encoder/val/acc: 77.703 encoder/val/loss: 0.774                           
+                                                                                                                                                      
+[02:45:28] INFO     bounding the number of neighbors per node...done in 13.98 s                                                         gap_ndp.py:100
+           INFO     computing aggregations...done in 0.16 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x10c3ca070>
+7
+1 train metrics: {'train/acc': 87.03404998779297, 'train/loss': 0.4931897521018982}
+1 val metrics: {'val/acc': 90.9886703491211, 'val/loss': 0.2973285913467407}
+2 train metrics: {'train/acc': 91.68292236328125, 'train/loss': 0.27284184098243713}
+2 val metrics: {'val/acc': 91.460693359375, 'val/loss': 0.276357501745224}
+3 train metrics: {'train/acc': 92.08126068115234, 'train/loss': 0.2579500079154968}
+3 val metrics: {'val/acc': 91.2890396118164, 'val/loss': 0.2714208662509918}
+4 train metrics: {'train/acc': 92.00371551513672, 'train/loss': 0.25868722796440125}
+4 val metrics: {'val/acc': 91.33194732666016, 'val/loss': 0.27600622177124023}
+5 train metrics: {'train/acc': 92.09661865234375, 'train/loss': 0.26015129685401917}
+5 val metrics: {'val/acc': 91.53793334960938, 'val/loss': 0.2729712724685669}
+6 train metrics: {'train/acc': 92.21855163574219, 'train/loss': 0.25632375478744507}
+6 val metrics: {'val/acc': 91.5121841430664, 'val/loss': 0.27640315890312195}
+7 train metrics: {'train/acc': 92.26309967041016, 'train/loss': 0.2558066248893738}
+7 val metrics: {'val/acc': 91.58084106445312, 'val/loss': 0.27306658029556274}
+                       overal progress   7/7 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:14                                             
+                       train/acc: 92.263 train/loss: 0.256  val/acc: 91.581 val/loss: 0.273                                                           
+                                                                                                                                                      
+[02:45:43] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   91.82   91.82                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 91.82 mean 91.82
+           INFO     Total running time: 60.40 seconds.                                                                                    train.py:121
+[02:45:46] INFO     importing modules...done in 2.71 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   8                                                                                
+                      dataset:         reddit      epochs:           8                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+[02:46:01] INFO                            dataset: reddit                                                                                loader.py:76
+                     ────────────────────────────────────────────────────────────                                                                     
+                      nodes:     116,713     mean degree:         396.13                                                                              
+                      edges:     46,233,380  median degree:       209.0                                                                               
+                      features:  602         train/val/test (%):  75.0/10.0/15.0                                                                      
+                      classes:   8           baseline acc (%):    24.35                                                                               
+                     ────────────────────────────────────────────────────────────                                                                     
+
+           INFO     loading dataset...done in 14.54 s                                                                                      train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:46:02] INFO     noise scale: 0.9138                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.65 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+8
+1 train metrics: {'encoder/train/acc': 69.18827056884766, 'encoder/train/loss': 0.9447601437568665}
+1 val metrics: {'encoder/val/acc': 75.17164611816406, 'encoder/val/loss': 0.7956955432891846}
+2 train metrics: {'encoder/train/acc': 76.8398208618164, 'encoder/train/loss': 0.7883654236793518}
+2 val metrics: {'encoder/val/acc': 76.37315368652344, 'encoder/val/loss': 0.8269504904747009}
+3 train metrics: {'encoder/train/acc': 77.57560729980469, 'encoder/train/loss': 0.7844165563583374}
+3 val metrics: {'encoder/val/acc': 77.15413665771484, 'encoder/val/loss': 0.7973974347114563}
+4 train metrics: {'encoder/train/acc': 78.41548919677734, 'encoder/train/loss': 0.7641241550445557}
+4 val metrics: {'encoder/val/acc': 77.17988586425781, 'encoder/val/loss': 0.815214216709137}
+5 train metrics: {'encoder/train/acc': 78.69193267822266, 'encoder/train/loss': 0.7514894008636475}
+5 val metrics: {'encoder/val/acc': 77.54891967773438, 'encoder/val/loss': 0.8007216453552246}
+6 train metrics: {'encoder/train/acc': 79.02889251708984, 'encoder/train/loss': 0.7459308505058289}
+6 val metrics: {'encoder/val/acc': 77.98661041259766, 'encoder/val/loss': 0.7793356776237488}
+7 train metrics: {'encoder/train/acc': 79.26551055908203, 'encoder/train/loss': 0.7274624109268188}
+7 val metrics: {'encoder/val/acc': 77.69481658935547, 'encoder/val/loss': 0.7743263840675354}
+8 train metrics: {'encoder/train/acc': 79.3498764038086, 'encoder/train/loss': 0.720201313495636}
+8 val metrics: {'encoder/val/acc': 78.35564422607422, 'encoder/val/loss': 0.762158215045929}
+                       overal progress   8/8 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:19                                             
+                       encoder/train/acc: 79.350 encoder/train/loss: 0.720  encoder/val/acc: 78.356 encoder/val/loss: 0.762                           
+                                                                                                                                                      
+[02:46:37] INFO     bounding the number of neighbors per node...done in 14.17 s                                                         gap_ndp.py:100
+           INFO     computing aggregations...done in 0.17 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x178a2dc10>
+8
+1 train metrics: {'train/acc': 87.13756561279297, 'train/loss': 0.4952322840690613}
+1 val metrics: {'val/acc': 91.13457489013672, 'val/loss': 0.29722005128860474}
+2 train metrics: {'train/acc': 91.74435424804688, 'train/loss': 0.27080076932907104}
+2 val metrics: {'val/acc': 91.48644256591797, 'val/loss': 0.272408127784729}
+3 train metrics: {'train/acc': 92.10840606689453, 'train/loss': 0.2548726499080658}
+3 val metrics: {'val/acc': 91.68383026123047, 'val/loss': 0.2691367268562317}
+4 train metrics: {'train/acc': 92.11848449707031, 'train/loss': 0.25417783856391907}
+4 val metrics: {'val/acc': 91.9069595336914, 'val/loss': 0.270082026720047}
+5 train metrics: {'train/acc': 92.30653381347656, 'train/loss': 0.24885804951190948}
+5 val metrics: {'val/acc': 91.88121795654297, 'val/loss': 0.26760703325271606}
+6 train metrics: {'train/acc': 92.27417755126953, 'train/loss': 0.2517819106578827}
+6 val metrics: {'val/acc': 91.87264251708984, 'val/loss': 0.26974186301231384}
+7 train metrics: {'train/acc': 92.34962463378906, 'train/loss': 0.24951882660388947}
+7 val metrics: {'val/acc': 91.94988250732422, 'val/loss': 0.27310213446617126}
+8 train metrics: {'train/acc': 92.31990814208984, 'train/loss': 0.2527763545513153}
+8 val metrics: {'val/acc': 91.88121795654297, 'val/loss': 0.2726548910140991}
+                       overal progress   8/8 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:13                                             
+                       train/acc: 92.320 train/loss: 0.253  val/acc: 91.881 val/loss: 0.273                                                           
+                                                                                                                                                      
+[02:46:50] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   91.91   91.91                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 91.91 mean 91.91
+[02:46:51] INFO     Total running time: 64.33 seconds.                                                                                    train.py:121
+[02:46:54] INFO     importing modules...done in 2.67 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   9                                                                                
+                      dataset:         reddit      epochs:           9                                                                                
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+[02:47:08] INFO                            dataset: reddit                                                                                loader.py:76
+                     ────────────────────────────────────────────────────────────                                                                     
+                      nodes:     116,713     mean degree:         396.13                                                                              
+                      edges:     46,233,380  median degree:       209.0                                                                               
+                      features:  602         train/val/test (%):  75.0/10.0/15.0                                                                      
+                      classes:   8           baseline acc (%):    24.35                                                                               
+                     ────────────────────────────────────────────────────────────                                                                     
+
+           INFO     loading dataset...done in 14.22 s                                                                                      train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:47:10] INFO     noise scale: 
+                                                                                                gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.78 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+9
+1 train metrics: {'encoder/train/acc': 69.15939331054688, 'encoder/train/loss': 0.9450434446334839}
+1 val metrics: {'encoder/val/acc': 75.12014770507812, 'encoder/val/loss': 0.7958336472511292}
+2 train metrics: {'encoder/train/acc': 76.82949829101562, 'encoder/train/loss': 0.7885136008262634}
+2 val metrics: {'encoder/val/acc': 76.3989028930664, 'encoder/val/loss': 0.8269030451774597}
+3 train metrics: {'encoder/train/acc': 77.5621566772461, 'encoder/train/loss': 0.7845604419708252}
+3 val metrics: {'encoder/val/acc': 77.1112289428711, 'encoder/val/loss': 0.7975144982337952}
+4 train metrics: {'encoder/train/acc': 78.40717315673828, 'encoder/train/loss': 0.7643164396286011}
+4 val metrics: {'encoder/val/acc': 77.17130279541016, 'encoder/val/loss': 0.8155177235603333}
+5 train metrics: {'encoder/train/acc': 78.69134521484375, 'encoder/train/loss': 0.7516581416130066}
+5 val metrics: {'encoder/val/acc': 77.54033660888672, 'encoder/val/loss': 0.8008206486701965}
+6 train metrics: {'encoder/train/acc': 79.02385711669922, 'encoder/train/loss': 0.7461167573928833}
+6 val metrics: {'encoder/val/acc': 77.96945190429688, 'encoder/val/loss': 0.7793338894844055}
+7 train metrics: {'encoder/train/acc': 79.25020599365234, 'encoder/train/loss': 0.7278133034706116}
+7 val metrics: {'encoder/val/acc': 77.65190887451172, 'encoder/val/loss': 0.7745184898376465}
+8 train metrics: {'encoder/train/acc': 79.36078643798828, 'encoder/train/loss': 0.7204588055610657}
+8 val metrics: {'encoder/val/acc': 78.34706115722656, 'encoder/val/loss': 0.7622447609901428}
+9 train metrics: {'encoder/train/acc': 80.00658416748047, 'encoder/train/loss': 0.7055813670158386}
+9 val metrics: {'encoder/val/acc': 78.44146728515625, 'encoder/val/loss': 0.7589351534843445}
+                       overal progress   9/9 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:20                                             
+                       encoder/train/acc: 80.007 encoder/train/loss: 0.706  encoder/val/acc: 78.441 encoder/val/loss: 0.759                           
+                                                                                                                                                      
+[02:47:45] INFO     bounding the number of neighbors per node...done in 14.54 s                                                         gap_ndp.py:100
+           INFO     computing aggregations...done in 0.17 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x10c5995e0>
+9
+1 train metrics: {'train/acc': 87.1378402709961, 'train/loss': 0.4917115271091461}
+1 val metrics: {'val/acc': 91.1517333984375, 'val/loss': 0.2948515713214874}
+2 train metrics: {'train/acc': 92.0043716430664, 'train/loss': 0.26284313201904297}
+2 val metrics: {'val/acc': 91.55509185791016, 'val/loss': 0.2741541564464569}
+3 train metrics: {'train/acc': 92.26174926757812, 'train/loss': 0.25013256072998047}
+3 val metrics: {'val/acc': 91.5207748413086, 'val/loss': 0.2681550681591034}
+4 train metrics: {'train/acc': 92.36053466796875, 'train/loss': 0.2465665191411972}
+4 val metrics: {'val/acc': 91.68383026123047, 'val/loss': 0.26776331663131714}
+5 train metrics: {'train/acc': 92.5625991821289, 'train/loss': 0.2429344207048416}
+5 val metrics: {'val/acc': 91.76107025146484, 'val/loss': 0.26746004819869995}
+6 train metrics: {'train/acc': 92.46931457519531, 'train/loss': 0.24579492211341858}
+6 val metrics: {'val/acc': 91.74390411376953, 'val/loss': 0.26818209886550903}
+7 train metrics: {'train/acc': 92.435302734375, 'train/loss': 0.25193876028060913}
+7 val metrics: {'val/acc': 91.58942413330078, 'val/loss': 0.2706417739391327}
+8 train metrics: {'train/acc': 92.4269027709961, 'train/loss': 0.2519850432872772}
+8 val metrics: {'val/acc': 91.72674560546875, 'val/loss': 0.270744651556015}
+9 train metrics: {'train/acc': 92.61373138427734, 'train/loss': 0.2459236979484558}
+9 val metrics: {'val/acc': 91.74390411376953, 'val/loss': 0.27163857221603394}
+                       overal progress   9/9 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:15                                             
+                       train/acc: 92.614 train/loss: 0.246  val/acc: 91.744 val/loss: 0.272                                                           
+                                                                                                                                                      
+[02:48:00] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   91.98   91.98                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 91.98 mean 91.98
+[02:48:01] INFO     Total running time: 66.74 seconds.                                                                                    train.py:121
+[02:48:04] INFO     importing modules...done in 2.71 s                                                                                     train.py:16
+
+           INFO                          program arguments                                                                                utils.py:156
+                     ─────────────────────────────────────────────────────────                                                                        
+                      method:          gap-ndp     encoder_epochs:   10                                                                               
+                      dataset:         reddit      epochs:           10                                                                               
+                      data_dir:        ./datasets  optimizer:        adam                                                                             
+                      delta:           auto        learning_rate:    0.01                                                                             
+                      max_degree:      100         weight_decay:     0.0                                                                              
+                      max_grad_norm:   1.0         full_batch_eval:  True                                                                             
+                      batch_size:      256         device:           cuda                                                                             
+                      hops:            2           val_interval:     1                                                                                
+                      hidden_dim:      16          seed:             12345                                                                            
+                      encoder_layers:  2           repeats:          1                                                                                
+                      base_layers:     1           debug:            False                                                                            
+                      head_layers:     1           logger:           csv                                                                              
+                      combine:         cat         project:          GAP                                                                              
+                      activation:      selu        output_dir:       ./output                                                                         
+                      dropout:         0.0         epsilon:          8.0                                                                              
+                     ─────────────────────────────────────────────────────────                                                                        
+
+[02:48:18] INFO                            dataset: reddit                                                                                loader.py:76
+                     ────────────────────────────────────────────────────────────                                                                     
+                      nodes:     116,713     mean degree:         396.13                                                                              
+                      edges:     46,233,380  median degree:       209.0                                                                               
+                      features:  602         train/val/test (%):  75.0/10.0/15.0                                                                      
+                      classes:   8           baseline acc (%):    24.35                                                                               
+                     ────────────────────────────────────────────────────────────                                                                     
+
+           INFO     loading dataset...done in 14.02 s                                                                                      train.py:36
+           WARNING  CUDA is not available, proceeding with CPU                                                                              base.py:40
+           INFO     delta = 1e-05                                                                                                        gap_ndp.py:81
+[02:48:20] INFO     noise scale: 0.9167                                                                                                  gap_ndp.py:84
+                                                                                                                                                      
+           INFO     calibrating noise to privacy budget...done in 1.53 s                                                                 gap_ndp.py:84
+           INFO     pretraining encoder                                                                                                 gap_inf.py:121
+10
+1 train metrics: {'encoder/train/acc': 69.1492919921875, 'encoder/train/loss': 0.9453110098838806}
+1 val metrics: {'encoder/val/acc': 75.13731384277344, 'encoder/val/loss': 0.7959185242652893}
+2 train metrics: {'encoder/train/acc': 76.83070373535156, 'encoder/train/loss': 0.7886022329330444}
+2 val metrics: {'encoder/val/acc': 76.3817367553711, 'encoder/val/loss': 0.8269513249397278}
+3 train metrics: {'encoder/train/acc': 77.55022430419922, 'encoder/train/loss': 0.7846781015396118}
+3 val metrics: {'encoder/val/acc': 77.11981201171875, 'encoder/val/loss': 0.7976298928260803}
+4 train metrics: {'encoder/train/acc': 78.4028549194336, 'encoder/train/loss': 0.7644829750061035}
+4 val metrics: {'encoder/val/acc': 77.1627197265625, 'encoder/val/loss': 0.8154945373535156}
+5 train metrics: {'encoder/train/acc': 78.6915512084961, 'encoder/train/loss': 0.7517949938774109}
+5 val metrics: {'encoder/val/acc': 77.54033660888672, 'encoder/val/loss': 0.8009124398231506}
+6 train metrics: {'encoder/train/acc': 79.01811981201172, 'encoder/train/loss': 0.7463290095329285}
+6 val metrics: {'encoder/val/acc': 77.95228576660156, 'encoder/val/loss': 0.7794581055641174}
+7 train metrics: {'encoder/train/acc': 79.24543762207031, 'encoder/train/loss': 0.7279489040374756}
+7 val metrics: {'encoder/val/acc': 77.65190887451172, 'encoder/val/loss': 0.7747247815132141}
+8 train metrics: {'encoder/train/acc': 79.37138366699219, 'encoder/train/loss': 0.7206087708473206}
+8 val metrics: {'encoder/val/acc': 78.36422729492188, 'encoder/val/loss': 0.7624871134757996}
+9 train metrics: {'encoder/train/acc': 79.99076080322266, 'encoder/train/loss': 0.7057526707649231}
+9 val metrics: {'encoder/val/acc': 78.45863342285156, 'encoder/val/loss': 0.7591795921325684}
+10 train metrics: {'encoder/train/acc': 79.90400695800781, 'encoder/train/loss': 0.7097480893135071}
+10 val metrics: {'encoder/val/acc': 78.80192565917969, 'encoder/val/loss': 0.7421495318412781}
+                       overal progress  10/10 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:23                                            
+                       encoder/train/acc: 79.904 encoder/train/loss: 0.710  encoder/val/acc: 78.802 encoder/val/loss: 0.742                           
+                                                                                                                                                      
+[02:48:57] INFO     bounding the number of neighbors per node...done in 13.85 s                                                         gap_ndp.py:100
+           INFO     computing aggregations...done in 0.16 s                                                                             gap_inf.py:149
+           INFO     training classifier                                                                                                     base.py:86
+<core.trainer.trainer.Trainer object at 0x17f29f340>
+10
+1 train metrics: {'train/acc': 87.21826934814453, 'train/loss': 0.49513548612594604}
+1 val metrics: {'val/acc': 91.47786712646484, 'val/loss': 0.28781658411026}
+2 train metrics: {'train/acc': 91.8843994140625, 'train/loss': 0.26693516969680786}
+2 val metrics: {'val/acc': 91.77823638916016, 'val/loss': 0.2730914056301117}
+3 train metrics: {'train/acc': 92.09162139892578, 'train/loss': 0.2589445412158966}
+3 val metrics: {'val/acc': 91.76107025146484, 'val/loss': 0.26916274428367615}
+4 train metrics: {'train/acc': 92.2144546508789, 'train/loss': 0.25334084033966064}
+4 val metrics: {'val/acc': 92.00995635986328, 'val/loss': 0.26636451482772827}
+5 train metrics: {'train/acc': 92.34422302246094, 'train/loss': 0.2478267103433609}
+5 val metrics: {'val/acc': 91.9069595336914, 'val/loss': 0.26865607500076294}
+6 train metrics: {'train/acc': 92.34984588623047, 'train/loss': 0.2551300823688507}
+6 val metrics: {'val/acc': 91.96704864501953, 'val/loss': 0.26638278365135193}
+7 train metrics: {'train/acc': 92.32891082763672, 'train/loss': 0.2517261207103729}
+7 val metrics: {'val/acc': 92.08719635009766, 'val/loss': 0.26744529604911804}
+8 train metrics: {'train/acc': 92.39462280273438, 'train/loss': 0.24930115044116974}
+8 val metrics: {'val/acc': 92.06143951416016, 'val/loss': 0.2689746916294098}
+9 train metrics: {'train/acc': 92.56144714355469, 'train/loss': 0.2461107224225998}
+9 val metrics: {'val/acc': 92.1386947631836, 'val/loss': 0.26512736082077026}
+10 train metrics: {'train/acc': 92.43960571289062, 'train/loss': 0.2561578154563904}
+10 val metrics: {'val/acc': 92.0271224975586, 'val/loss': 0.2737964689731598}
+                       overal progress  10/10 epochs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:17                                            
+                       train/acc: 92.440 train/loss: 0.256  val/acc: 92.027 val/loss: 0.274                                                           
+                                                                                                                                                      
+[02:49:15] INFO                run 1                                                                                                       train.py:68
+                     ──────────────────────────                                                                                                       
+                      metric     last    mean                                                                                                         
+                     ──────────────────────────                                                                                                       
+                      test/acc   92.00   92.00                                                                                                        
+                     ──────────────────────────                                                                                                       
+
+
+test/acc last 92.00 mean 92.00
+           INFO     Total running time: 70.72 seconds.                                                                                    train.py:121

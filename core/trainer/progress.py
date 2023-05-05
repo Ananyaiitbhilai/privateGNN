@@ -38,6 +38,7 @@ class TrainerProgress(Progress):
         }
 
         self.max_rows = 0
+        print(num_epochs)
 
     def update(self, task: Task, **kwargs):
         if 'metrics' in kwargs:
@@ -53,8 +54,10 @@ class TrainerProgress(Progress):
         for split in ['train', 'val', 'test']:
             metric_str = ' '.join(f'{k}: {v:.3f}' for k, v in metrics.items() if f'{split}/' in k)
             out.append(metric_str)
+            #print(metric_str)
         
         return '  '.join(out)
+
 
     def make_tasks_table(self, tasks: Iterable[Task]) -> Table:
         """Get a table to render the Progress display.

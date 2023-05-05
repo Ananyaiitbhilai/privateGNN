@@ -107,12 +107,14 @@ class Trainer:
                 # train loop
                 train_metrics = self.loop(train_dataloader, stage='train', prefix=prefix)
                 metrics.update(train_metrics)
+                print(epoch,"train metrics:" ,train_metrics)
                     
-                # validation loop
+                # val{}idation loop
                 if val_dataloader and self.val_interval and epoch % self.val_interval == 0:
 
                     val_metrics = self.loop(val_dataloader, stage='val', prefix=prefix)
                     metrics.update(val_metrics)
+                    print(epoch,"val metrics:" ,val_metrics)
 
                     if best_metrics is None or self.is_better(metrics[monitor_key], best_metrics[monitor_key]):
                         best_metrics = metrics
@@ -129,6 +131,7 @@ class Trainer:
                 if test_dataloader:
                     test_metrics = self.loop(test_dataloader, stage='test', prefix=prefix)
                     metrics.update(test_metrics)
+                    
 
                 # log and update progress
                 Logger.get_instance().log(metrics)

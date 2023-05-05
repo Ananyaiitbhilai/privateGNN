@@ -23,12 +23,12 @@ class ComposedNoisyMechanism(NoisyMechanism):
             'weight_list': weight_list
         }
 
-      
+             
 
         mechanism_list = [mech.update(weight * noise_scale) for mech, weight in zip(mechanism_list, weight_list)]
         mech = Composition()(mechanism_list, coeff_list)
         self.set_all_representation(mech)
-        print(weight_list)
+        #print(weight_list)
         
 
 
