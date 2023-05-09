@@ -107,6 +107,9 @@ class Trainer:
                 # train loop
                 train_metrics = self.loop(train_dataloader, stage='train', prefix=prefix)
                 metrics.update(train_metrics)
+                
+                if hasattr(self.model, 'get_epsilon'):
+                    self.model.get_epsilon(epoch)
                     
                 # validation loop
                 if val_dataloader and self.val_interval and epoch % self.val_interval == 0:
