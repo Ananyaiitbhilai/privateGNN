@@ -47,6 +47,9 @@ class NodePrivGAP(GAP):
         self.weight1 = weight1
 
         self.num_train_nodes = None  # will be used to set delta if it is 'auto'
+        
+        self._encoder.get_epsilon = self.get_epsilon
+        self._classifier.get_epsilon = self.get_epsilon
 
     def calibrate(self):
         self.pma_mechanism = PMA(noise_scale=0.0, hops=self.hops)
