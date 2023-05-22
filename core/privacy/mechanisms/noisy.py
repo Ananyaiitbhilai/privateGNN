@@ -51,6 +51,8 @@ class NoisyMechanism(Mechanism):
             )
 
             if result.success and result.fun < 1e-3:
+                #noise_scale = 0.9596
+
                 noise_scale = np.exp(result.x)
                 self.update(noise_scale)
                 return noise_scale

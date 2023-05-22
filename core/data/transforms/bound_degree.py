@@ -12,10 +12,13 @@ class BoundOutDegree(BaseTransform):
         self.with_replacement = False
 
     def __call__(self, data: Data) -> Data:
+        print("Data0", data)
         data.adj_t = data.adj_t.t()
         data = self.sample(data)
         data.adj_t = data.adj_t.t()
+        print(data)
         return data
+        
 
     def sample(self, data: Data) -> Data:
         colptr, row, perm = to_csc(data, device='cpu')
@@ -59,3 +62,4 @@ class BoundDegree(BaseTransform):
         adj = SparseTensor(row=row, col=col).to(device)
         data.adj_t = adj.t()
         return data
+        

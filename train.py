@@ -129,51 +129,49 @@ def main(weight1):
             gpu_mem = torch.cuda.max_memory_allocated() / 1024 ** 3
             console.info(f'Max GPU memory used = {gpu_mem:.2f} GB\n')
 
-weight = [0.5, 1, 2, 4, 8, 16]
-weight_list = [None] * 3  # Initialize weight_list with None values
+# weight = [0.5, 1, 2, 4, 8, 16]
+# weight_list = [None] * 3  # Initialize weight_list with None values
 
-all_lists = []
-for i in range(len(weight)):
-    weight_list[0] = weight[i]
-    for j in range(len(weight)):
-        weight_list[1] = weight[j]
-        for k in range(len(weight)):
-            weight_list[2] = weight[k]
-            all_lists.append(weight_list.copy())
+# all_lists = []
+# for i in range(len(weight)):
+#     weight_list[0] = weight[i]
+#     for j in range(len(weight)):
+#         weight_list[1] = weight[j]
+#         for k in range(len(weight)):
+#             weight_list[2] = weight[k]
+#             all_lists.append(weight_list.copy())
 
-def simplify_ratios(lst):
-    ratios = []
-    for i in range(len(lst)):
-        for j in range(i+1, len(lst)):
-            ratio = []
-            for k in range(len(lst[i])):
-                if lst[j][k] == 0:
-                    continue
-                elif lst[i][k] == 0:
-                    ratio = None
-                    break
-                else:
-                    ratio.append(lst[j][k] / lst[i][k])
-            if ratio is not None and all(x == ratio[0] for x in ratio):
-                ratios.append((i,j,ratio[0]))
+# def simplify_ratios(lst):
+#     ratios = []
+#     for i in range(len(lst)):
+#         for j in range(i+1, len(lst)):
+#             ratio = []
+#             for k in range(len(lst[i])):
+#                 if lst[j][k] == 0:
+#                     continue
+#                 elif lst[i][k] == 0:
+#                     ratio = None
+#                     break
+#                 else:
+#                     ratio.append(lst[j][k] / lst[i][k])
+#             if ratio is not None and all(x == ratio[0] for x in ratio):
+#                 ratios.append((i,j,ratio[0]))
     
-    result = []
-    used_indices = set()
-    for i in range(len(lst)):
-        if i not in used_indices:
-            result.append(lst[i])
-            for (j,k,ratio) in ratios:
-                if i == j and k not in used_indices and all(lst[i][x]*ratio == lst[k][x] for x in range(len(lst[i]))):
-                    used_indices.add(k)
-                elif i == k and j not in used_indices and all(lst[i][x]/ratio == lst[j][x] for x in range(len(lst[i]))):
-                    used_indices.add(j)
-    return result
+#     result = []
+#     used_indices = set()
+#     for i in range(len(lst)):
+#         if i not in used_indices:
+#             result.append(lst[i])
+#             for (j,k,ratio) in ratios:
+#                 if i == j and k not in used_indices and all(lst[i][x]*ratio == lst[k][x] for x in range(len(lst[i]))):
+#                     used_indices.add(k)
+#                 elif i == k and j not in used_indices and all(lst[i][x]/ratio == lst[j][x] for x in range(len(lst[i]))):
+#                     used_indices.add(j)
+#     return result
 
-final_list = simplify_ratios(all_lists)
+# final_list = simplify_ratios(all_lists)
 
 
 if __name__ == '__main__':
-    
-    for i in range(1):
-        main([1,1,2])
+        main([1,1,4])
         
