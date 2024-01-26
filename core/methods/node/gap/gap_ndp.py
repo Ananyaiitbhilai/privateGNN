@@ -12,6 +12,7 @@ from core.privacy.mechanisms import ComposedNoisyMechanism
 from core.privacy.algorithms import PMA, NoisySGD
 from core.data.transforms import BoundOutDegree
 from core.modules.base import Metrics, Stage
+from core import console
 
 
 class NodePrivGAP(GAP):
@@ -46,6 +47,9 @@ class NodePrivGAP(GAP):
         self.weight1 = weight1
 
         self.num_train_nodes = None  # will be used to set delta if it is 'auto'
+        
+        self._encoder.get_epsilon = self.get_epsilon
+        self._classifier.get_epsilon = self.get_epsilon
 
     def calibrate(self):
         self.pma_mechanism = PMA(noise_scale=0.0, hops=self.hops)
@@ -79,6 +83,7 @@ class NodePrivGAP(GAP):
             if self.delta == 'auto':
                 delta = 0.0 if np.isinf(self.epsilon) else 1. / (10 ** len(str(self.num_train_nodes)))
                 console.info('delta = %.0e' % delta)
+                self.delta = delta
             
             self.noise_scale = composed_mechanism.calibrate(eps=self.epsilon, delta=delta)
             console.info(f'noise scale: {self.noise_scale:.4f}\n')
@@ -120,3 +125,42 @@ class NodePrivGAP(GAP):
         optimizer = super().configure_encoder_optimizer()
         optimizer = self.encoder_noisy_sgd.prepare_optimizer(optimizer)
         return optimizer
+    
+    def pretrain_encoder(self, data: Data, prefix: str) -> Data:
+        self.encoder_finished = False
+        super().pretrain_encoder(data, prefix)
+        self.encoder_finished = True
+        
+    def get_epsilon(epoch: int):
+        encoder_noisy_sgd = NoisySGD(
+            noise_scale=0.0, 
+            dataset_size=self.num_train_nodes, 
+            batch_size=self.batch_size, 
+            epochs=self.encoder_epochs if self.encoder_finished else epoch,
+            max_grad_norm=self.max_grad_norm,
+        )
+        
+        mechanism_list = [encoder_noisy_sgd]
+        
+        if self.encoder_finished:
+            pma_mechanism = PMA(noise_scale=self.noise_scale, hops=self.hops)
+            
+            classifier_noisy_sgd = NoisySGD(
+                noise_scale=self.noise_scale, 
+                dataset_size=self.num_train_nodes, 
+                batch_size=self.batch_size, 
+                epochs=epoch,
+                max_grad_norm=self.max_grad_norm,
+            )
+            
+            mechanism_list += [pma_mechanism, classifier_noisy_sgd]
+
+        composed_mechanism = ComposedNoisyMechanism(
+            noise_scale=self.noise_scale,
+            mechanism_list=mechanism_list,
+            weight_list = self.weight1[:len(mechanism_list)]
+        )
+        
+        epsilon = composed_mechanism.get_approxDP(self.delta)
+        console.print(f'epoch: {epoch}, epsilon: {epsilon:.4f}')
+        
