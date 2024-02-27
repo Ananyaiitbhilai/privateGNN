@@ -1,8 +1,7 @@
 # GAP: Differentially Private Graph Neural Networks with Aggregation Perturbation
 
-This repository is the official implementation of the paper:  
-[**GAP: Differentially Private Graph Neural Networks with Aggregation Perturbation**](https://arxiv.org/abs/2203.00949)   
-Accepted at USENIX Security 2023
+This repository is the extension of implementation of the paper:  
+[**GAP: Differentially Private Graph Neural Networks with Aggregation Perturbation**](https://arxiv.org/abs/2203.00949) for my course project of DS607 (Advance ML)
 
 
 ## Requirements
@@ -81,14 +80,10 @@ python train.py --help
 </center>
 
 
-## Contact
 
-Should you ran into any problems or had any questions, please get in touch via [email](mailto:sina.sajadmanesh@epfl.ch) or open an issue on [GitHub](https://github.com/sisaman/GAP/issues).
 
 
 ## Citation
-
-If you find this code useful, please cite the following paper:  
 ```bibtex
 
 @inproceedings {sajadmanesh2023gap,
