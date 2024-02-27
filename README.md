@@ -1,7 +1,7 @@
 # GAP: Differentially Private Graph Neural Networks with Aggregation Perturbation
 
 This repository is the extension of implementation of the paper:  
-[**GAP: Differentially Private Graph Neural Networks with Aggregation Perturbation**](https://arxiv.org/abs/2203.00949) for my course project of DS603 (Advance ML)
+[**GAP: Differentially Private Graph Neural Networks with Aggregation Perturbation**](https://arxiv.org/abs/2203.00949) for my course project of DS603 (Advance ML). You can fing the PDF report [here](https://github.com/Ananyaiitbhilai/privateGNN/blob/master/DS603_Project_GNN_privacy_16%3A04.pdf).
 
 
 ## Requirements
